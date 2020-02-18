@@ -44,7 +44,8 @@ public class OtherInterceptor extends HandlerInterceptorAdapter {
      */
     @Override
     public void postHandle(HttpServletRequest request,
-                           HttpServletResponse response, Object handler,
+                           HttpServletResponse response,
+                           Object handler,
                            ModelAndView modelAndView){
         /*这里是获取分类集合信息，用于放在搜索栏下面*/
         List<Category> cs = categoryService.list();
@@ -52,7 +53,7 @@ public class OtherInterceptor extends HandlerInterceptorAdapter {
 
         /*这里是获取当前的contextPath:tmall_ssm_Gem,用于放在左上角那个变形金刚，点击之后才能够跳转到首页，否则点击之后也仅仅停留在当前页面*/
         HttpSession session = request.getSession();
-        String contextPath=session.getServletContext().getContextPath();
+        String contextPath=session.getServletContext().getContextPath()+"/forehome";
         request.getSession().setAttribute("contextPath", contextPath);
 
         /*这里是获取购物车中一共有多少数量*/
@@ -74,8 +75,10 @@ public class OtherInterceptor extends HandlerInterceptorAdapter {
 
     @Override
     public void afterCompletion(HttpServletRequest request,
-                                HttpServletResponse response, Object handler, Exception ex){
-        System.out.println("afterCompletion(), 在访问视图之后被调用");
+                                HttpServletResponse response,
+                                Object handler,
+                                Exception ex){
+//        System.out.println("afterCompletion(), 在访问视图之后被调用");
     }
 
 

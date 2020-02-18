@@ -15,5 +15,11 @@
         <property name="yearIsDateType" value="false" />
       </driver-properties>
     </data-source>
+    <data-source source="LOCAL" name="tmallGem@121.43.101.177" uuid="47ba3bf9-4594-4fdf-8c8b-87a8a3f4931c">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://121.43.101.177:3306/tmallGem</jdbc-url>
+    </data-source>
   </component>
 </project>
